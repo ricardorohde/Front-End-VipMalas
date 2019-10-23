@@ -1,0 +1,1085 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+
+body {
+  margin-top: 12rem;
+  color: black;
+  background-color: white;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+h1 {
+  display: flex;
+  justify-content: start;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
+  font-weight: 900;
+  color: #C56660;
+}
+
+a {
+  text-decoration: none;
+  color: #C56660;
+}
+
+.btn {
+  justify-content: flex-end !important;
+  border: 5px solid #C56660;
+  background-color: #C56660;
+  border-radius: 25px;
+  font-size: 1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: white;
+
+  &:hover {
+    background-color: #C56660;
+    border: 5px solid #C56660;
+    transition: 0.5s;
+    transform: scale(1.05);
+  }
+}
+
+.pm-0 {
+  margin: 0;
+  padding: 0;
+}
+
+.ml-0 {
+  margin-left: 0;
+}
+
+.mr-0 {
+  margin-right: 0;
+}
+
+.mrl-0 {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.pr-0 {
+  padding-right: 0;
+}
+
+.lr-0 {
+  padding-left: 0;
+}
+
+.prl-0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.pt-6 {
+  padding-top: 6rem;
+}
+
+.top-0 {
+  top: 0px !important;
+}
+
+/* xxxxxxxxxxxxxx INDEX xxxxxxxxxxxxxx
+----------------------------------------*/
+
+/* BANNER
+  -------------------------------------------------- */
+
+#banner {
+  margin-top: -12rem;
+
+  .carousel {
+    margin-bottom: 4rem;
+  }
+
+  .btn-banner {
+    display: flex;
+    position: absolute;
+    background-color: transparent;
+    border: 1px solid;
+    border-radius: 25px;
+    padding: 1rem 2rem 1rem 2rem;
+    text-transform: uppercase;
+    font-weight: 900;
+
+    &:nth-child(1) {
+      border-color: white;
+      color: white;
+    }
+
+    &:nth-child(2) {
+      border-color: yellow;
+      color: yellow;
+    }
+  }
+
+  .carousel-indicators {
+    li {
+      width: 4.5rem;
+      margin: 0.5rem;
+      margin-bottom: 3rem;
+      height: 1px;
+      border-radius: 20%;
+      border: 3px solid white;
+    }
+
+    .active {
+      background-color: #C56660;
+      border: 3px solid #C56660;
+    }
+  }
+}
+
+/* COMO FUNCIONA DIV
+  -------------------------------------------------- */
+
+.btn-saibaMais {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+/* CASOS DE SUCESSO DIV
+  -------------------------------------------------- */
+
+.bg-yellow {
+  background-color: #FFCC29;
+  height: 500px;
+  width: auto;
+  margin-left: 0;
+  padding-left: 0;
+  overflow-x: hidden;
+}
+
+#casos-div {
+  .title-section h2 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 900;
+    padding-top: 5rem;
+    padding-bottom: 4rem;
+    padding-left: 15px;
+  }
+
+  .avatar {
+    border-radius: 20px;
+  }
+
+  p {
+    overflow-wrap: break-word;
+    font-size: 1.1rem;
+  }
+
+  a {
+    font-size: 0.8rem;
+    padding: auto;
+
+    &:hover {
+      transform: scale(1) !important;
+      cursor: default;
+    }
+  }
+
+  .btn {
+    background-color: black;
+    color: white;
+    font-weight: 400;
+    text-transform: none;
+    border: 5px solid black;
+    float: right;
+  }
+
+  .carousel-indicators {
+    margin-bottom: -2.5rem;
+
+    li {
+      background: black;
+      border-radius: 100%;
+      width: 15px;
+      height: 15px;
+      border: 5px;
+    }
+
+    .active {
+      background: white;
+    }
+  }
+}
+
+/* REGIAO CAROUSEL
+  -------------------------------------------------- */
+
+#regiaoCarousel {
+  margin-bottom: 5rem;
+
+  h2 {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 900;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+
+  .carousel-item {
+    height: 15rem;
+  }
+
+  .carousel-indicators {
+    li {
+      background: black;
+      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+      border: 5px;
+    }
+
+    .active {
+      background: #C56660;
+    }
+  }
+
+  .img-regiao {
+    border-radius: 20px;
+    max-width: 100%;
+  }
+}
+
+/* BLOG-DIV
+  -------------------------------------------------- */
+
+#blog-div {
+  padding-top: 5rem;
+  padding-bottom: 8rem;
+  background-color: #F3F3F3;
+
+  span {
+    font-size: 0.8rem;
+    line-height: 2rem;
+  }
+
+  h1 {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 2rem;
+  }
+
+  h2 {
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 900;
+  }
+
+  p {
+    line-height: 1.7rem;
+  }
+
+  .blog-saibaMais a {
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-left: 6px dashed black;
+    padding-left: 0.5rem;
+    margin-top: 1.5rem;
+    color: black;
+
+    &:hover {
+      transition: 0.5s;
+      border: 3px inset black;
+      padding-right: 0.5rem;
+      text-decoration: none;
+    }
+  }
+}
+
+/* NEWSLETTER
+  -------------------------------------------------- */
+
+#newsletter {
+  background: #4C4C4C;
+  color: white;
+  height: 320px;
+
+  .seta {
+    width: auto;
+    z-index: 100;
+
+    img {
+      position: absolute;
+      right: 50%;
+      -webkit-transform: translate(50%);
+      transform: translate(50%);
+      margin-top: -31px !important;
+    }
+  }
+
+  .container {
+    position: relative;
+    top: 17%;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 900;
+  }
+
+  p {
+    padding-top: 1rem;
+    padding-right: 2rem;
+  }
+
+  input {
+    font-size: 18px;
+    padding: 20px 10px 10px 5px;
+    -webkit-appearance: none;
+    display: block;
+    background: #4C4C4C;
+    color: white;
+    width: 100%;
+    border-radius: 20px;
+    border: 2px solid white;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 15px;
+    top: 15px;
+    transition: all 0.2s ease;
+  }
+
+  input:focus ~ label {
+    top: -30px;
+    transform: scale(0.75);
+    left: 10px;
+    color: white;
+  }
+}
+
+input.used ~ label {
+  top: -30px;
+  transform: scale(0.75);
+  left: 10px;
+  color: white;
+}
+
+#newsletter .btn:hover {
+  transform: none;
+}
+
+
+/* header-title
+  -------------------------------------------------- */
+
+#header-title {
+  background-color: #E7E7E7;
+  width: 100%;
+  height: 200px;
+
+  .container {
+    padding-top: 3rem;
+  }
+
+  a {
+    font-weight: 600;
+    color: black;
+
+    &:hover {
+      text-decoration: none;
+      color: #FFCC29;
+    }
+  }
+
+  span {
+    font-size: 0.75rem;
+  }
+
+  .icone-regiao {
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+
+  h1 {
+    color: black;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.header-title-seta img {
+  position: absolute;
+  right: 50%;
+  top: 362px;
+  -webkit-transform: translate(50%);
+  transform: translate(50%);
+}
+
+/* CIDADES
+  -------------------------------------------------- */
+
+#cidades {
+  margin-top: 5rem;
+
+  h2 {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.2rem;
+  }
+}
+
+h3 {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+#cidades {
+  h3 {
+    color: #C56660;
+  }
+
+  img {
+    opacity: 0.5;
+    border-radius: 20px;
+  }
+
+  .carousel-indicators {
+    margin-bottom: -2rem;
+
+    li {
+      background: black;
+      border-radius: 100%;
+      width: 15px;
+      height: 15px;
+      border: 5px;
+    }
+
+    .active {
+      background: #C56660;
+    }
+  }
+}
+
+/* DESTAQUES
+  -------------------------------------------------- */
+
+#destaques {
+  margin-top: 5rem;
+  line-height: 1.7rem;
+
+  .bg-yellow {
+    border-radius: 20px;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-left: 5rem;
+    padding-right: 4rem;
+    max-height: 410px;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .icon_title h2 {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0;
+    margin-left: 1rem;
+  }
+
+  img {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.icon_destaques {
+  margin: auto;
+}
+
+#destaques .text_destaques {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 3.5rem;
+  padding-right: 0;
+}
+
+/* LOCALIZAÇÃO
+  -------------------------------------------------- */
+
+#localizacao {
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 6rem;
+    margin-bottom: 7rem;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  iframe {
+    border-radius: 20px;
+  }
+}
+
+/* ATENDIMENTO
+  -------------------------------------------------- */
+
+#atendimento {
+  background-color: #1598BD;
+  color: white;
+  height: 320px;
+  width: 100%;
+  line-height: 1.5rem;
+
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 7rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding-bottom: 1rem;
+  }
+
+  .seta img {
+    position: absolute;
+    right: 50%;
+    margin-top: -30px;
+    -webkit-transform: translate(50%);
+    transform: translate(50%);
+  }
+
+  a {
+    margin-left: 2rem;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: black;
+    background-color: #F3F3F3;
+    border-color: #F3F3F3;
+  }
+}
+
+/* xxxxxxxxxxxxxx QUEM SOMOS xxxxxxxxxxxxxx
+--------------------------------------------*/
+
+/* SOBRE
+  -------------------------------------------------- */
+
+#sobre {
+  h1 {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    text-align: justify;
+  }
+
+  img {
+    border-radius: 20px;
+  }
+}
+
+/* CAROUSEL SOBRE
+  -------------------------------------------------- */
+
+#carouselSobre {
+  img {
+    border-radius: 20px;
+  }
+
+  .container {
+    padding-left: 0;
+  }
+
+  .carousel-indicators {
+    margin-bottom: -2.5rem;
+
+    li {
+      background: black;
+      border-radius: 100%;
+      width: 15px;
+      height: 15px;
+      border: 5px;
+    }
+  }
+}
+
+/* VALORES
+  -------------------------------------------------- */
+
+#valores {
+  padding-top: 4rem;
+  margin-top: 5rem;
+  padding-bottom: 4rem;
+  background-color: #F3F3F3;
+  text-align: justify;
+
+  h3 {
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 1.5rem;
+  }
+}
+
+/* xxxxxxxxxxxxxx COMO FUNCIONA xxxxxxxxxxxxxx
+----------------------------------------------*/
+
+/* ETAPAS
+  -------------------------------------------------- */
+
+section.como-funciona {
+  background: #f8faff;
+  padding: 0px 0 60px;
+
+  h1 {
+    text-transform: uppercase;
+    font-weight: 900;
+    position: relative;
+    font-size: 2rem;
+  }
+
+  .text-cf {
+    position: relative;
+    padding-left: 85px;
+    margin-bottom: 50px;
+
+    label {
+      font-size: 1.7rem;
+      font-weight: 900;
+      background: black;
+      border-radius: 50%;
+      padding: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      left: 0;
+      width: 70px;
+      height: 70px;
+      color: white;
+    }
+  }
+
+  p {
+    font-weight: 500;
+  }
+
+  img {
+    max-width: 80px;
+    margin-left: -5.6rem;
+    margin-bottom: -0.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section.como-funciona {
+    padding: 0px 0 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section.como-funciona h1 {
+    padding-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section.como-funciona h1:before {
+    left: 40%;
+    top: -70px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section.como-funciona .text-cf-margin {
+    margin-top: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section.como-funciona img {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  section.como-funciona .text-cf {
+    margin-bottom: 20px;
+  }
+}
+
+/* xxxxxxxxxxxxxx CASOS DE SUCESSO xxxxxxxxxxxxxx
+----------------------------------------------------*/
+
+/* CASOS
+  -------------------------------------------------- */
+
+.center {
+  display: flex;
+  justify-content: center;
+
+  h1 {
+    font-weight: 900;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  img {
+    left: auto;
+  }
+}
+
+#casos {
+  img {
+    border-radius: 20px;
+  }
+
+  a {
+    font-size: 1rem;
+    padding: auto;
+
+    &:hover {
+      transform: scale(1) !important;
+      cursor: default;
+    }
+  }
+
+  .btn {
+    background-color: black;
+    color: white;
+    font-weight: 400;
+    text-transform: none;
+    border: 5px solid black;
+    float: right;
+  }
+}
+
+/* xxxxxxxxxxxxxx CAROUSEL BLOG xxxxxxxxxxxxxx
+----------------------------------------------------*/
+
+/* CAROUSEL BLOG
+  -------------------------------------------------- */
+
+#blogCarousel {
+  img {
+    opacity: 0.5;
+    border-radius: 20px;
+  }
+
+  .carousel-indicators {
+    margin-bottom: -2rem;
+
+    li {
+      background: black;
+      border-radius: 100%;
+      width: 15px;
+      height: 15px;
+      border: 5px;
+    }
+
+    .active {
+      background: #C56660;
+    }
+  }
+}
+
+/* xxxxxxxxxxxxxx CONTATO xxxxxxxxxxxxxx
+----------------------------------------------------*/
+
+/* TITLE CONTATO
+  -------------------------------------------------- */
+
+#contato {
+  h1 {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 2rem;
+  }
+
+  .btn {
+    background-color: black;
+    border-color: black;
+    color: #FFCC29;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 25px;
+    top: 10px;
+    transition: all 0.2s ease;
+  }
+
+  input:focus ~ label {
+    top: -22px;
+    transform: scale(0.75);
+    left: 10px;
+    color: black;
+    font-weight: 500;
+  }
+}
+
+input.used ~ label {
+  top: -22px;
+  transform: scale(0.75);
+  left: 10px;
+  color: black;
+  font-weight: 500;
+}
+
+#contato {
+  input {
+    font-size: 18px;
+    padding: 20px 10px 10px 5px;
+    -webkit-appearance: none;
+    display: block;
+    background: #E7E7E7;
+    color: black;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 10px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  textarea:focus ~ label {
+    top: -22px;
+    transform: scale(0.75);
+    left: 10px;
+    color: black;
+  }
+}
+
+textarea.used ~ label {
+  top: -22px;
+  transform: scale(0.75);
+  left: 10px;
+  color: black;
+}
+
+#contato {
+  textarea {
+    font-size: 18px;
+    padding: 20px 10px 10px 5px;
+    -webkit-appearance: none;
+    display: block;
+    background: #E7E7E7;
+    color: black;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 10px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .bg-gray {
+    border: 11px solid #E7E7E7;
+
+    p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+  }
+
+  select {
+    font-size: 18px;
+    display: block;
+    background: #E7E7E7;
+    color: #999;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 10px;
+  }
+}
+
+/* xxxxxxxxxxxxxx BUSCAR xxxxxxxxxxxxxx
+----------------------------------------*/
+
+/* ENCONTRE MEU LAR
+  -------------------------------------------------- */
+
+#dados, #localizacao, #caracteristicas {
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+#header-form {
+  background-color: black;
+  color: white;
+  text-transform: uppercase;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-bottom: 1rem;
+    border-bottom: 5px solid white;
+  }
+
+  .active h2 {
+    transition: 0.5s;
+    color: #C56660;
+    padding-bottom: 1rem;
+    border-bottom: 5px solid #C56660;
+  }
+}
+
+#buscar-lar {
+  h1 {
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 25px;
+    top: 10px;
+    transition: all 0.2s ease;
+  }
+
+  input:focus ~ label {
+    top: -22px;
+    transform: scale(0.75);
+    left: 10px;
+    color: black;
+    font-weight: 500;
+  }
+}
+
+input.used ~ label {
+  top: -22px;
+  transform: scale(0.75);
+  left: 10px;
+  color: black;
+  font-weight: 500;
+}
+
+#buscar-lar {
+  input {
+    font-size: 18px;
+    padding: 20px 20px 10px 5px;
+    -webkit-appearance: none;
+    display: block;
+    background: #E7E7E7;
+    color: black;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 10px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  textarea:focus ~ label {
+    top: -22px;
+    transform: scale(0.75);
+    left: 10px;
+    color: black;
+  }
+}
+
+textarea.used ~ label {
+  top: -22px;
+  transform: scale(0.75);
+  left: 10px;
+  color: black;
+}
+
+#buscar-lar {
+  textarea {
+    font-size: 18px;
+    padding: 20px 10px 10px 5px;
+    -webkit-appearance: none;
+    display: block;
+    background: #E7E7E7;
+    color: black;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 10px;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .bg-gray {
+    border: 11px solid #E7E7E7;
+
+    p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+  }
+
+  select {
+    font-size: 18px;
+    display: block;
+    background: #E7E7E7;
+    color: #999;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 10px;
+  }
+
+  .form-group {
+    margin-top: 1rem;
+  }
+
+  .btn {
+    background-color: black;
+    border-color: black;
+    color: white;
+    letter-spacing: 2px;
+  }
+}

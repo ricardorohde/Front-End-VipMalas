@@ -1,0 +1,56 @@
+
+/* FOOTER 
+  -------------------------------------------------- */
+
+  footer {
+    background-color: #161616;
+    width: 100%;
+    padding-top: 7rem;
+    line-height: 1.7rem;
+  
+    img {
+      border-radius: 20px;
+      margin-left: 0;
+      padding-left: 0;
+    }
+  
+    .square img {
+      border-radius: 0 !important;
+    }
+  
+    h4 {
+      color: white;
+      font-weight: 900;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+    }
+  
+    span {
+      color: #C56660;
+    }
+  
+    p {
+      color: white;
+    }
+  
+    .btn span {
+      color: black !important;
+    }
+  }
+  
+  .fab {
+    background-color: #C56660;
+  }
+  
+  .creditos {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    font-size: 0.7rem;
+  
+    a {
+      color: #C56660;
+    }
+  }
+  
+  /* xxxxxxxxxxxxxx REGIAO xxxxxxxxxxxxxx
+  ----------------------------------------*/
