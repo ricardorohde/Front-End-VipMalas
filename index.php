@@ -21,49 +21,36 @@ require 'cms/classes/functions.php';
 <body>
     <!-- ____________________ NAVBAR ____________________-->
     <? include('includes/header.php'); ?>
+
     <!-- ____________________ BANNER ____________________-->
-    <? include('includes/banner.php'); ?>
-
-    <!-- ____________________ COMO FUNCIONA ____________________-->
-  <? include('includes/como-funciona-div.php'); ?>
-
-    <!-- ____________________ CASOS DIV ____________________-->
-    <section id="casos-div">
-        <div class="bg-yellow">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-xs-12">
-                        <div class="row col-12 title-section">
-                            <h2>Casos de sucesso</h2>
-                        </div>
-                        <div id="depoimentosCarousel" class="carousel slide" data-ride="carousel">
-                            <ol class="carousel-indicators">
-                                <li data-target="#depoimentosCarousel" data-slide-to="0" class="active"></li>
-                                <li data-target="#depoimentosCarousel" data-slide-to="1"></li>
-                                <li data-target="#depoimentosCarousel" data-slide-to="2"></li>
-                            </ol>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <? include('includes/depoimento.php'); ?>
-                                </div>
-                                <div class="carousel-item">
-                                    <? include('includes/depoimento.php'); ?>
-                                </div>
-                                <div class="carousel-item">
-                                    <? include('includes/depoimento.php'); ?>
-                                </div>
-                            </div>
-                        </div>
+    <div class="home-sliders hidden-mobile">
+        <div class="sliders">
+            <div class="sup-banner" style="height:800px; width:100%; background-image: url('uploads/destaques/banner1.png')">
+                <div class="container prl-0">
+                    <div class="text-banner d-flex align-items-end float-right">
+                        <a href="#" class="btn-banner">Ver preços</a>
+                        <a href="#" class="btn-banner">Quero alugar</a>
                     </div>
-
-                    <div class="col-md-6 col-xs-12">
-                        <img src="http://placehold.it/1000x500" alt="Foto depoimento">
-                    </div>
-
                 </div>
             </div>
+            <div class="sup-banner" style="height:800px; width:100%; background-image: url('uploads/destaques/banner1.png')">
+            </div>
+            <div class="sup-banner" style="height:800px; width:100%; background-image: url('uploads/destaques/banner1.png')">
+            </div>
         </div>
-    </section>
+    </div>
+
+    <!-- ____________________ COMO FUNCIONA ____________________-->
+    <? include('includes/como-funciona-div.php'); ?>
+
+    <!-- ____________________ ALUGAR DIV ____________________-->
+    <? include('includes/alugar-div.php'); ?>
+
+    <!-- ____________________ VANTAGENS E BENEFICIOS ____________________ -->
+    <? include('includes/vantagens.php'); ?>
+
+    <!-- ____________________ NEWSLETTER ____________________-->
+    <? include('includes/newsletter.php'); ?>
 
     <? include('includes/footer.php'); ?>
     <? include('includes/js.php'); ?>

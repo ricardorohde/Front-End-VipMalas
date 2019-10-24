@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../sass/pages/user-search.scss"
+    ],
+    "names": [],
+    "file": "user-search.css"
+}
