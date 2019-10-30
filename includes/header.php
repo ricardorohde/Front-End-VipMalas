@@ -26,10 +26,10 @@
             <a class="nav-link" href="como-funciona.php">Como funciona?</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link nav-m2" href="regiao.php">Vip malas</a>
+            <a class="nav-link nav-m2" href="sobre.php">Vip malas</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link nav-m2" href="blog.php">Dúvidas</a>
+            <a class="nav-link nav-m2" href="duvidas.php">Dúvidas</a>
           </li>
           <li class="nav-item active">
             <a class="nav-link mr-0" href="contato.php">Contato</a>
@@ -40,15 +40,15 @@
           <img class="btn-icone mr-1" src="assets/images/icon-lock.png" alt="icon-chave"><span>Acessar área do cliente</span>
         </a>
 
-        <a href="alugar.php" class="btn btn_alugar">
+        <a class="btn btn_alugar" href="quero-alugar.php">
           <img class="btn-icone mr-2" src="assets/images/icon-mala.png" alt="icon-chave"><span>Quero alugar</span>
         </a>
 
-        <a href="carrinho.php" class="btn btn_carrinho md-ml-3">
+        <a class="btn btn_carrinho md-ml-3" href="carrinho.php">
           <img class="icon-carrinho" src="assets/images/icon-carrinho.png" alt="icon carrinho de compras">
         </a>
 
-        <a href="cliente.php" class="btn btn_cliente">
+        <a class="btn btn_cliente" href="cliente.php">
           <img class="icon-cliente" src="assets/images/icon-lock.png" alt="icon carrinho de compras">
         </a>
 

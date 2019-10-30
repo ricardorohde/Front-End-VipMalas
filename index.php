@@ -19,7 +19,7 @@ require 'cms/classes/functions.php';
 </head>
 
 <body>
-    <!-- ____________________ NAVBAR ____________________-->
+    <!-- ____________________ HEADER ____________________-->
     <? include('includes/header.php'); ?>
 
     <!-- ____________________ BANNER ____________________-->

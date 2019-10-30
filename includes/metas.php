@@ -22,7 +22,7 @@ $Header_PlaceLati = ''; // Ex: 13.062616
 $Header_PlaceLong = ''; // Ex: 80.229508
 // Consulte Latitude/Longitude em http://itouchmap.com/latlong.html
 
-$Header_NomeEmpresa = ''; // Ex: Agência Kombi
+$Header_NomeEmpresa = 'Vip Malas'; // Ex: Agência Kombi
 $Header_SloganEmpresa = ''; // Ex: Agência de Web e Design Gráfico
 $Header_Endereco = ''; // Ex: Rua Comendador Hermelino Matarazzo, 204, Vila Santa Rita
 $Header_Cidade = ''; // Ex: Sorocaba

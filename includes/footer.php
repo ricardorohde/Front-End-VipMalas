@@ -1,11 +1,11 @@
 <footer>
   <div class="container">
     <div class="row">
-      <div class="col-3 pm-0 footer-img">
-        <img src="http://placehold.it/270x200" alt="">
+      <div class="col-3 pm-0 footer-img hidden-mobile">
+        <img src="http://placehold.it/270x200" alt="Imagem">
       </div>
 
-      <div class="col-4 pl-0">
+      <div class="col-xs-12 col-md-4 pl-0">
         <h3 class="pb-2">
           Sobre a VIp Malas
         </h3>
@@ -16,7 +16,7 @@
         <a class="btn mt-4" href="#">Saiba mais</a>
       </div>
 
-      <div class="col-2 text-white">
+      <div class="col-xs-12 col-md-2 text-white">
         <p>
           <h3>Contato</h3>
           contato@vipmalas.com.br<br>
@@ -25,7 +25,7 @@
         </p>
       </div>
 
-      <div class="col-3">
+      <div class="col-xs-12 col-md-3">
         <span class="float-right square">
           <h3>Acompanhe <br> nossas <br> redes sociais</h3>
           <br>
@@ -58,11 +58,11 @@
       </li>
     </ul>
 
-    <div class="row col-12 prl-0 creditos mrl-0">
-      <div class="col-6">
+    <div class="row col-xs-6 col-md-12 prl-0 creditos mrl-0">
+      <div class="col-xs-12 col-md-6">
         <p><span>Vip Malas</span> - Todos os direitos reservados</p>
       </div>
-      <div class="col-6">
+      <div class="col-xs-12 col-md-6">
         <p class="float-right">Desenvolvido por:<a class="ml-1" href="#">Agêcia Kombi</a></p>
       </div>
     </div>
