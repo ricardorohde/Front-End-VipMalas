@@ -7,6 +7,7 @@
 <script src="assets/js/config_slider.js"></script>
 <script src="assets/js/classie.js"></script>
 <script src="assets/js/funcoes.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
 
 <?
 #################	CONFIGURAÇÃO DOS JS/PLUGINS DE CADA PÁGINA	#################

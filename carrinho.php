@@ -22,18 +22,28 @@ require 'cms/classes/functions.php';
     <!-- ____________________ HEADER ____________________-->
     <? include('includes/header2.php'); ?>
 
-    <main class="como-funciona">
+    <main class="carrinho">
         <!-- ____________________ TITTLE ____________________-->
         <? include('includes/title.php'); ?>
 
-        <!-- ____________________ COMO FUNCIONA - DIV ETAPAS ____________________-->
-        <? include('includes/como-funciona-div.php'); ?>
+        <!-- ____________________ TABELA DE COMPRAS ____________________-->
+        <section class="tabela-compras">
+            <div class="container my-5">
 
-        <!-- ____________________ VANTAGENS E BENEFICIOS ____________________ -->
-        <? include('includes/vantagens.php'); ?>
+                <!-- ____________________ TABLEA DE COMPRAS - DIV ____________________-->
+                <? include('includes/tabela-compras-div.php'); ?>
 
-        <!-- ____________________ QUERO ALUGAR DIV ____________________-->
-        <? include('includes/quero-alugar-div.php'); ?>
+                <!-- ____________________ BOTÕES CARRINHO ____________________-->
+                <div class="w-100 py-4">
+                    <a class="btn continuar" href="alugar.php">Continuar Alugando</a>
+                    <a class="btn finalizar" href="checkout.php">Finalizar Pedido</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ____________________ NEWSLETTER ____________________-->
+        <? include('includes/newsletter.php'); ?>
     </main>
 
     <? include('includes/footer.php'); ?>

@@ -25,32 +25,33 @@ require 'cms/classes/functions.php';
     <!-- ____________________ BANNER ____________________-->
     <div class="home-sliders hidden-mobile">
         <div class="sliders">
-            <div class="sup-banner" style="height:800px; width:100%; background-image: url('uploads/destaques/banner1.png')">
+            <div class="sup-banner" style="height:800px; width:100%; background-image: url('uploads/destaques/banner1.png')" alt="Banner principal vip Malas - Viajar com vip malas nunca foi tão simples e barato">
                 <div class="container prl-0">
                     <div class="text-banner d-flex align-items-end float-right">
-                        <a href="#" class="btn-banner">Ver preços</a>
-                        <a href="#" class="btn-banner">Quero alugar</a>
+                        <a href="quero-alugar.php" class="btn-banner">Ver preços</a>
+                        <a href="quero-alugar.php" class="btn-banner">Quero alugar</a>
                     </div>
                 </div>
             </div>
-            <div class="sup-banner" style="height:800px; width:100%; background-image: url('uploads/destaques/banner1.png')">
+            <div class="sup-banner" style="height:800px; width:100%; background-image: url('uploads/destaques/banner1.png')" alt="Banner principal vip Malas">
             </div>
-            <div class="sup-banner" style="height:800px; width:100%; background-image: url('uploads/destaques/banner1.png')">
+            <div class="sup-banner" style="height:800px; width:100%; background-image: url('uploads/destaques/banner1.png')" alt="Banner principal vip Malas">
             </div>
         </div>
     </div>
+    <main class="home">
+        <!-- ____________________ COMO FUNCIONA ____________________-->
+        <? include('includes/como-funciona-div.php'); ?>
 
-    <!-- ____________________ COMO FUNCIONA ____________________-->
-    <? include('includes/como-funciona-div.php'); ?>
+        <!-- ____________________ QUERO ALUGAR DIV ____________________-->
+        <? include('includes/quero-alugar-div.php'); ?>
 
-    <!-- ____________________ ALUGAR DIV ____________________-->
-    <? include('includes/alugar-div.php'); ?>
+        <!-- ____________________ VANTAGENS E BENEFICIOS ____________________ -->
+        <? include('includes/vantagens.php'); ?>
 
-    <!-- ____________________ VANTAGENS E BENEFICIOS ____________________ -->
-    <? include('includes/vantagens.php'); ?>
-
-    <!-- ____________________ NEWSLETTER ____________________-->
-    <? include('includes/newsletter.php'); ?>
+        <!-- ____________________ NEWSLETTER ____________________-->
+        <? include('includes/newsletter.php'); ?>
+    </main>
 
     <? include('includes/footer.php'); ?>
     <? include('includes/js.php'); ?>

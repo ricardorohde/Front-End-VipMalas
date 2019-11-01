@@ -1,4 +1,4 @@
-<?
+<?/*
 
 session_start();
 include 'cms/config/config.php';
@@ -18,12 +18,18 @@ if (is_numeric($_GET['ref'])) {
       $count_hit = $count_hit + 1;
       mysql_query("UPDATE site_tb_servicos SET hit_serv='" . $count_hit . "' WHERE id_serv = '" . $rowServ['id_serv'] . "'");
    } else {
-      Redir('/#servicos');
+      Redir('/#cliente');
    }
 } else {
-   Redir('/#servicos');
+   Redir('/#cliente');
 }
 
+*/ ?>
+<?php
+session_start();
+include 'cms/config/config.php';
+require 'cms/classes/class.conndatabase.php';
+require 'cms/classes/functions.php';
 ?>
 
 <html>
@@ -32,217 +38,271 @@ if (is_numeric($_GET['ref'])) {
 </head>
 
 <body>
+   <!-- ____________________ HEADER ____________________-->
+   <? include('includes/header2.php'); ?>
 
-   <!-- Under Nav -->
-   <? include('includes/undernav.php'); ?>
+   <main class="cliente">
+      <!-- ____________________ TITTLE ____________________-->
+      <? include('includes/title.php'); ?>
 
-   <!-- Menu Nav -->
-   <? include('includes/navbar.php'); ?>
+      <?
+      session_start();
+      include 'cms/config/config.php';
+      require 'cms/classes/class.conndatabase.php';
+      require 'cms/classes/functions.php';
 
-   <!-- Siba Nav -->
-<? include('includes/sidenav.php'); ?>
+      ?>
+      <!doctype html>
+      <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+      <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+      <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+      <!--[if gt IE 8]><!-->
+      <html class="no-js" lang="pt-br" itemscope itemtype="http://schema.org/WebPage">
+      <!--<![endif]-->
 
-   <div class="set-red-line"></div>
-   </div>
-   </div>
-   <!-- WhatsApp Window -->
-   <? include('includes/whatsapp-window.php'); ?>
-   <!--  botão ir para topo -->
-   <div class="bg-1_scalex">
-      <div class="reverse-scaleX">
-         <div class="row py-4">
+      <head>
+         <? include('includes/metas.php'); ?>
+         <? include('includes/css.php'); ?>
+      </head>
+
+      <body>
+
+         <? include('includes/header.php'); ?>
+         <? include('includes/whatsapp-window.php'); ?>
+
+         <section class="top-page">
             <div class="container">
-            <span class="font-path">Home / Serviço / <span class="rebrac-red-color">Assistência Técnica</span> </span>
-                  <h2 class="text-uppercase font-weight-bold pt-4" data-aos="fade-right" data-aos-duration="1500">Rebrac</h2>
-                  <h3 class="text-uppercase rebrac-red-color" data-aos="fade-left" data-aos-delay="50" data-aos-duration="1000"><?= $rowServ['titulo_serv'] ?></h3>
-            </div>
-         </div>
-
-         <div class="container">
-            <div class="row">
-               <div class="col-12 col-sm-6 col-md-6 col-lg-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000">
-                  <?= $rowServ['texto_serv'] ?>
-               </div>
-               <div class="col-12 col-sm-6 col-md-6 col-lg-6 mb-5 pb-5">
-                  <img src="<?= $config_urlCliente ?>uploads/servicos/<?= $rowServ['foto_serv'] ?>"
-                   class="rounded d-block mb-3 img-fluid" id="assistImage" alt="<?= $rowServ['titulo_serv'] ?>" 
-                   title="<?= $rowServ['titulo_serv'] ?>">
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-
-   <div class="overflow-hidden bg-4 py-5">
-      <div class="container">
-         <div class="row py-5">
-            <div class="col-12 col-md-6 text-center" data-aos="zoom-in">
-               <h3 class="text-white font-weight-bold text-uppercase pb-3">Solicite um orçamento</h3>
-               <form class="set-form" id="formOrcamento" name="formOrcamento" action="javascript:" method="post" onsubmit="enviaOrcamento();">
-                  <div class="row">
-                     <div class="col-12 ">
-                        <div class="py-1">
-                           <input type="hidden" name="url" value="https://www.rebrac.com.br">
-                           <input type="text" name="nome" class="form-control" id="nome" placeholder="Nome" required>
-                        </div>
-                        <div class="py-1">
-                           <input type="email" name="email" class="form-control" id="email" placeholder="E-mail" required>
-                        </div>
-                        <div class="py-1">
-                           <input type="text" name="telefone" class="form-control" id="telefone" placeholder="Telefone" required>
-                        </div>
-                        <div class="py-3 text-right">
-                           <input type="hidden" name="servico" id="servico" value="<?= $rowServ['titulo_serv'] ?>">
-                           <button type="submit" class="btn rebrac-red-color bg-warning py-3 px-5 font-weight-bolder" role="button" aria-pressed="true">SOLICITAR</button>
-                        </div>
-                     </div>
-                     <div class="col-md-12" id="retorno_msg_orcamento"></div>
+               <div class="row">
+                  <div class="col-md-12 text-center">
+                     <h1>Novo cadastro</h1>
                   </div>
-               </form>
+               </div>
             </div>
-            <div class="modal fade" id="sucessModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-               <div class="modal-dialog modal-dialog-centered" role="document">
-                  <div class="modal-content">
-                     <div class="modal-header">
-                        <h5 class="modal-title text-uppercase" id="exampleModalLongTitle">Solicitação Enviada</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                           <span aria-hidden="true">&times;</span>
-                        </button>
+         </section>
+         <section class="cadastro-page">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="breadcrumb-site">
+                        <p><a href="./">Home</a> / <b>Cadastro</b></p>
                      </div>
-                     <div class="modal-body">
+                     <form class="form-style form-panel" name="formCadastro" id="formCadastro" action="processa_dados.php?act=NovoCadastro" enctype="multipart/form-data" method="post" onsubmit="return validaFormCadastro();">
                         <div class="row">
-                           <div class="col-2 text-center">
-                              <i class="far fa-check-circle fa-2x text-success" aria-hidden="true"></i>
+                           <div class="col-md-4">
+                              <div class="form-group">
+                                 <span class="input input--chisato">
+                                    <input required="" class="input__field input__field--chisato" type="text" name="nome" id="nome">
+                                    <label class="input__label input__label--chisato">
+                                       <span class="input__label-content input__label-content--chisato" data-content="NOME:">NOME:</span>
+                                    </label>
+                                 </span>
+                              </div>
                            </div>
-                           <div class="col-10">
-                              Obrigado sua solicitação foi enviada, e está sendo análisada.
+                           <div class="col-md-3">
+                              <div class="form-group">
+                                 <span class="input input--chisato">
+                                    <input required="" class="input__field input__field--chisato" type="text" name="email" id="email">
+                                    <label class="input__label input__label--chisato">
+                                       <span class="input__label-content input__label-content--chisato" data-content="EMAIL:">EMAIL:</span>
+                                    </label>
+                                 </span>
+                              </div>
+                           </div>
+                           <div class="col-md-2">
+                              <div class="form-group">
+                                 <span class="input input--chisato">
+                                    <input required="" class="input__field input__field--chisato mask_cpf" type="text" name="cpf" id="cpf">
+                                    <label class="input__label input__label--chisato">
+                                       <span class="input__label-content input__label-content--chisato" data-content="CPF:">CPF:</span>
+                                    </label>
+                                 </span>
+                              </div>
+                           </div>
+                           <div class="col-md-3">
+                              <div class="form-group">
+                                 <span class="input input--chisato">
+                                    <input required="" class="input__field input__field--chisato mask_date" type="text" name="datanascimento" id="datanascimento">
+                                    <label class="input__label input__label--chisato">
+                                       <span class="input__label-content input__label-content--chisato" data-content="DATA DE NASCIMENTO:">DATA DE NASCIMENTO:</span>
+                                    </label>
+                                 </span>
+                              </div>
+                           </div>
+                           <div class="col-md-3">
+                              <div class="form-group">
+                                 <span class="input input--chisato">
+                                    <input required="" class="input__field input__field--chisato mask_phone" type="text" name="telefone" id="telefone">
+                                    <label class="input__label input__label--chisato">
+                                       <span class="input__label-content input__label-content--chisato" data-content="TELEFONE:">TELEFONE:</span>
+                                    </label>
+                                 </span>
+                              </div>
+                           </div>
+                           <div class="col-md-3">
+                              <div class="form-group">
+                                 <span class="input input--chisato">
+                                    <input required="" class="input__field input__field--chisato mask_phone" type="text" name="celular" id="celular">
+                                    <label class="input__label input__label--chisato">
+                                       <span class="input__label-content input__label-content--chisato" data-content="CELULAR:">CELULAR:</span>
+                                    </label>
+                                 </span>
+                              </div>
+                           </div>
+                           <div class="col-md-3">
+                              <div class="form-group">
+                                 <span class="input input--chisato">
+                                    <input required="" class="input__field input__field--chisato" type="password" name="senha" id="senha">
+                                    <label class="input__label input__label--chisato">
+                                       <span class="input__label-content input__label-content--chisato" data-content="SENHA:">SENHA:</span>
+                                    </label>
+                                 </span>
+                              </div>
+                           </div>
+                           <div class="col-md-3">
+                              <div class="form-group">
+                                 <span class="input input--chisato">
+                                    <input required="" class="input__field input__field--chisato" type="password" name="confirmacaosenha" id="confirmacaosenha">
+                                    <label class="input__label input__label--chisato">
+                                       <span class="input__label-content input__label-content--chisato" data-content="REPITA A SENHA:">REPITA A SENHA:</span>
+                                    </label>
+                                 </span>
+                              </div>
+                           </div>
+                           <div class="col-md-4 button-align">
+                              <div class="button-area">
+                                 <button class="btn link-style hvr-wobble-horizontal">Finalizar cadastro</button>
+                              </div>
                            </div>
                         </div>
-                     </div>
-                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar ao site</button>
-                        <a type="button" href="https://api.whatsapp.com/send?phone=5515998320028&amp;text=Olá, Solicitei um orçamento e estou com uma dúvida." class="btn set-under-nav-wapp text-white">Dúvidas ? entre em contato <i class="fab fa-whatsapp fa-lg" aria-hidden="true"> </i></a>
-                     </div>
+                     </form>
                   </div>
                </div>
             </div>
-         </div>
-      </div>
-   </div>
-   <!-- Carousel 2 -->
-   <? include('includes/carousel2.php'); ?>
+         </section>
 
-   <div class="container my-5 overflow-hidden">
-      <div class="row">
-         <div class="col-12 col-md-6">
-            <h3 class="font-weight-bold text-uppercase">Veja Mais</h3>
-         </div>
-         <div class="col-12 col-md-6 text-right">
-            <button type="button" href="#" class="btn text-white set-bg-blue py-3 px-3 text-uppercase " role="button" aria-pressed="true">Fale conosco</a></button>
-         </div>
-      </div>
-      <div class="row mt-4 ">
-         <? if (mysql_num_rows($resMaisServ)) {
-            while ($rowMaisServ = mysql_fetch_array($resMaisServ)) {
-               ?>
-               <div class="col-12 col-md-6 " data-aos="flip-left" data-aos-duration="1000">
-                  <a href="<?= $config_urlCliente ?>servicos/<?= cleanString($rowMaisServ['titulo_serv']) ?>-<?= $rowMaisServ['id_serv'] ?>"><img src="<?= $config_urlCliente ?>uploads/servicos/<?= $rowMaisServ['thumb_serv'] ?>" class="img-fluid over" alt="<?= $rowMaisServ['titulo_serv'] ?>" title="<?= $rowMaisServ['titulo_serv'] ?>" /></a>
-                  <div class="col-12">
-                     <a href="<?= $config_urlCliente ?>servicos/<?= cleanString($rowMaisServ['titulo_serv']) ?>-<?= $rowMaisServ['id_serv'] ?>">
-                        <h6 class="rebrac-red-color font-weight-bolder my-2 mt-5"><?= $rowMaisServ['titulo_serv'] ?></h6>
-                     </a>
-                     <?= substr(strip_tags($rowMaisServ['texto_serv']), 0, 270) . '...' ?>
-                  </div>
-               </div>
-         <? }
-         } ?>
-      </div>
-   </div>
-   <? include('includes/footer.php'); ?>
-   <? include('includes/js.php'); ?>
-   <script>
-      function validaFormOrcamento() {
+         <script type="text/javascript" language="javascript">
+            function validaFormCadastro() {
 
-         d = document.formOrcamento;
+               d = document.formCadastro;
 
-         //validar nome
-         if (d.nome.value == "") {
-            alert("O campo Nome deve ser preenchido!");
-            d.nome.focus();
-            return false;
-         }
+               //validar nome
+               if (d.nome.value == "") {
+                  alert("O campo NOME deve ser preenchido!");
+                  d.nome.focus();
+                  return false;
+               } else {
+                  var str = d.nome.value;
+                  var count = str.trim().split(/[\s\.,;]+/).length;
+                  if (count < 2) {
+                     alert("Preencha seu NOME COMPLETO!");
+                     d.nome.focus();
+                     return false;
+                  }
+               }
 
+               //validar email
+               if (d.email.value == "") {
+                  alert("O campo E-MAIL deve ser preenchido!");
+                  d.email.focus();
+                  return false;
+               } else {
+                  var email = d.email.value;
+                  var exclude = /[^@\-\.\w]|^[_@\.\-]|[\._\-]{2}|[@\.]{2}|(@)[^@]*\1/;
+                  var check = /@[\w\-]+\./;
+                  var checkend = /\.[a-zA-Z]{2,3}$/;
+                  if (((email.search(exclude) != -1) || (email.search(check)) == -1) || (email.search(checkend) == -1)) {
+                     alert("O campo E-MAIL deve ser um endereço válido!");
+                     d.email.focus();
+                     return false;
+                  }
 
-         //validar email
-         if (d.email.value == "") {
-            alert("O campo E-mail deve ser preenchido!");
-            d.email.focus();
-            return false;
-         } else {
-            var email = d.email.value;
-            var exclude = /[^@\-\.\w]|^[_@\.\-]|[\._\-]{2}|[@\.]{2}|(@)[^@]*\1/;
-            var check = /@[\w\-]+\./;
-            var checkend = /\.[a-zA-Z]{2,3}$/;
-            if (((email.search(exclude) != -1) || (email.search(check)) == -1) || (email.search(checkend) == -1)) {
-               alert("O campo E-mail deve ser um endereço válido!");
-               d.email.focus();
-               return false;
+               }
+
+               //validar cpf
+               if (!validaCPF(d.cpf.value)) {
+                  alert('O campo CPF deve ser preenchido corretamente!');
+                  d.cpf.focus();
+                  return false;
+               }
+
+               //validar datanascimento
+               if (d.datanascimento.value.length < 10) {
+                  alert("O campo DATA DE NASCIMENTO deve ser preenchido corretamente!");
+                  d.datanascimento.focus();
+                  return false;
+               }
+
+               //validar telefone
+               if (d.telefone.value.length < 14) {
+                  alert("O campo TELEFONE deve ser preenchido corretamente!");
+                  d.telefone.focus();
+                  return false;
+               }
+
+               //validar celular
+               if (d.celular.value.length < 15) {
+                  alert("O campo CELULAR deve ser preenchido corretamente!");
+                  d.celular.focus();
+                  return false;
+               }
+
+               if (d.senha.value == "") {
+                  alert("O campo SENHA deve ser preenchido!");
+                  d.senha.focus();
+                  return false;
+               }
+
+               //validar mensagem
+               if (d.confirmacaosenha.value != d.senha.value) {
+                  alert("Senhas digitadas não conferem!");
+                  d.senha.focus();
+                  return false;
+               }
+
             }
 
-         }
+            function validaCPF(cpf) {
+               cpf = cpf.replace(/[^\d]+/g, '');
+               if (cpf == '') return false;
+               // Elimina CPFs invalidos conhecidos  
+               if (cpf.length != 11 ||
+                  cpf == "00000000000" ||
+                  cpf == "11111111111" ||
+                  cpf == "22222222222" ||
+                  cpf == "33333333333" ||
+                  cpf == "44444444444" ||
+                  cpf == "55555555555" ||
+                  cpf == "66666666666" ||
+                  cpf == "77777777777" ||
+                  cpf == "88888888888" ||
+                  cpf == "99999999999")
+                  return false;
+               // Valida 1o digito 
+               add = 0;
+               for (i = 0; i < 9; i++)
+                  add += parseInt(cpf.charAt(i)) * (10 - i);
+               rev = 11 - (add % 11);
+               if (rev == 10 || rev == 11)
+                  rev = 0;
+               if (rev != parseInt(cpf.charAt(9)))
+                  return false;
+               // Valida 2o digito 
+               add = 0;
+               for (i = 0; i < 10; i++)
+                  add += parseInt(cpf.charAt(i)) * (11 - i);
+               rev = 11 - (add % 11);
+               if (rev == 10 || rev == 11)
+                  rev = 0;
+               if (rev != parseInt(cpf.charAt(10)))
+                  return false;
+               return true;
+            }
+         </script>
 
-         //validar telefone
-         if (d.telefone.value == "") {
-            alert("O campo Telefone deve ser preenchido!");
-            d.telefone.focus();
-            return false;
-         }
+         <? include('includes/footer.php'); ?>
+         <? include('includes/js.php'); ?>
+         <? include('includes/analytics.php'); ?>
 
-         //validar mensagem
-         if (d.mensagem.value == "") {
-            alert("O campo Mensagem deve ser preenchido!");
-            d.mensagem.focus();
-            return false;
-         }
-         return true;
-      }
+      </body>
 
-      function enviaOrcamento() {
-         form_valido = validaFormOrcamento();
-
-         if (form_valido) {
-            var formdata = new FormData($("#formOrcamento")[0]);
-            var linkAjax = "./ajax.php?act=sendOrcamento";
-
-            formdata.append('session', '<?= session_id() ?>');
-            $.ajax({
-               type: 'POST',
-               url: linkAjax,
-               data: formdata,
-               processData: false,
-               contentType: false,
-               success: function(data) {
-                  console.log(data);
-                  data = $.parseJSON(data);
-                  if (!data.ErroEnvio) {
-                     //sendLeadTrack('Orçamento', $('#formOrcamento #email').val());
-                     var msg_retorno = data.nome + ', sua mensagem foi enviada com sucesso, retornaremos em breve!';
-                     $('#retorno_msg_orcamento').html('<div class="alert alert-success">' + msg_retorno + '</div>');
-                     $("#formOrcamento input, #formOrcamento textarea, #formOrcamento select").val('');
-                     $('#formOrcamento input[type=checkbox]').prop('checked', false);
-
-                  } else {
-                     var msg_retorno = 'Erro: ' + data.ErroEnvio;
-                     $('#retorno_msg_orcamento').html('<div class="alert alert-warning">' + msg_retorno + '</div>');
-
-                  }
-               },
-            });
-         }
-
-      }
-   </script>
-   <? include('includes/analytics.php'); ?>
-</body>
-
-</html>
+      </html>

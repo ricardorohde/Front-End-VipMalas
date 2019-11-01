@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-3 pm-0 footer-img hidden-mobile">
-        <img src="http://placehold.it/270x200" alt="Imagem">
+        <a href="contato.php"><img src="http://placehold.it/270x200" alt="Imagem da vip malas"></a>
       </div>
 
       <div class="col-xs-12 col-md-4 pl-0">
@@ -29,9 +29,9 @@
         <span class="float-right square">
           <h3>Acompanhe <br> nossas <br> redes sociais</h3>
           <br>
-          <img href="#" src="assets/images/icon-facebook.png" alt="facebook">
-          <img href="#" src="assets/images/icon-instagram.png" alt="instagram" class="ml-1 mr-1">
-          <img href="#" src="assets/images/icon-youtube.png" alt="youtube">
+          <a href="./"><img src="assets/images/icon-facebook.png" alt="facebook"></a>
+          <a href="./"><img src="assets/images/icon-instagram.png" alt="instagram" class="ml-1 mr-1"></a>
+          <a href="./"><img src="assets/images/icon-youtube.png" alt="youtube"></a>
         </span>
       </div>
     </div>
@@ -42,25 +42,25 @@
   <div class="container mt-1">
     <ul class="row justify-content-center ml-5 mr-5 pl-5 pr-5">
       <li class="footer-item active">
-        <a class="footer-link" href="como-funciona.php">Dúvidas</a>
+        <a class="footer-link" href="duvidas.php">Dúvidas</a>
       </li>
       <li class="footer-item active">
-        <a class="footer-link" href="regiao.php">Política de privacidade</a>
+        <a class="footer-link" href="politicas.php">Política de privacidade</a>
       </li>
       <li class="footer-item active">
-        <a class="footer-link" href="blog.php">Política de entrega</a>
+        <a class="footer-link" href="politicas.php">Política de entrega</a>
       </li>
       <li class="footer-item active">
-        <a class="footer-link" href="contato.php">Forma de pagamentos</a>
+        <a class="footer-link" href="politicas.php">Forma de pagamentos</a>
       </li>
       <li class="footer-item active">
-        <a class="footer-link" href="contato.php">Termos de uso</a>
+        <a class="footer-link" href="politicas.php">Termos de uso</a>
       </li>
     </ul>
 
     <div class="row col-xs-6 col-md-12 prl-0 creditos mrl-0">
       <div class="col-xs-12 col-md-6">
-        <p><span>Vip Malas</span> - Todos os direitos reservados</p>
+        <p>Todos os direitos reservados - <span>Vip Malas</span></p>
       </div>
       <div class="col-xs-12 col-md-6">
         <p class="float-right">Desenvolvido por:<a class="ml-1" href="#">Agêcia Kombi</a></p>

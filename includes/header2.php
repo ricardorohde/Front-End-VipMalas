@@ -9,11 +9,11 @@
 <? if($Header_Email){?><meta itemprop="email" content="<?=$Header_Email?>"><? } ?>
 
 <!-- ____________________ NAVBAR ____________________-->
-<header>
+<header class="navbar2">
 
   <nav id="menu" class="navbar navbar-expand-sm navbar-light fixed-top bg-light expand">
     <div class="container">
-      <a class="navbar-brand" href="#"> <img src="assets/images/logo.png" alt="Logo - Vip Malas"></a>
+      <a class="navbar-brand" href="#"> <img src="assets/images/logo2.png" alt="Logo - Vip Malas"></a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>

@@ -4,7 +4,6 @@
     <div class="title-section">
       <h1>Como funciona</h1>
     </div>
-    
 
     <div class="row w-100 mx-auto py-md-4">
 
@@ -13,7 +12,7 @@
           <span>01</span>
         </div>
         <div class="ml-2 d-flex">
-          <img class="align-self-center pb-3" src="assets/images/icon-carrinhu.png" alt="">
+          <img class="align-self-center pb-3" src="assets/images/icon-carrinhu.png" alt="Icone carrinho de compras azul">
           <h3 class="align-self-end">Escolha...</h3>
         </div>
         <img class="seta hidden-mobile" src="assets/images/seta.png" alt="Seta indicadora para a proxima etapa de como funciona">
@@ -29,7 +28,7 @@
           <span>02</span>
         </div>
         <div class="ml-2 d-flex">
-          <img class="align-self-center pb-3" src="assets/images/icon-empilhadeira.png" alt="">
+          <img class="align-self-center pb-3" src="assets/images/icon-empilhadeira.png" alt="Icone imagem empilhadeira">
           <h3 class="align-self-end">Receba.</h3>
         </div>
         <img class="seta hidden-mobile" src="assets/images/seta.png" alt="Seta indicadora para a proxima etapa de como funciona">
@@ -45,7 +44,7 @@
           <span>03</span>
         </div>
         <div class="ml-2 d-flex">
-          <img class="align-self-center pb-3" src="assets/images/icon-heart.png" alt="">
+          <img class="align-self-center pb-3" src="assets/images/icon-heart.png" alt="Icone de coração">
           <h3 class="align-self-end">Curta!</h3>
         </div>
         <img class="seta hidden-mobile" src="assets/images/seta.png" alt="Seta indicadora para a proxima etapa de como funciona">
@@ -61,7 +60,7 @@
           <span>04</span>
         </div>
         <div class="ml-2 d-flex">
-          <img class="align-self-center pb-3" src="assets/images/icon-box.png" alt="">
+          <img class="align-self-center pb-3" src="assets/images/icon-box.png" alt="Iconde caixa">
           <h3 class="align-self-end">Devolva.</h3>
         </div>
         <p>

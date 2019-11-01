@@ -9,14 +9,14 @@
           <div class="form-row mt-4">
             <div class="field col-xs-12">
               <input type="text" name="nome_news" id="nome_news" placeholder="Qual o seu nome ?">
-              <label for="fullname">Nome</label>
+              <!-- <label for="fullname">Nome</label> -->
             </div>
             <div class="field col-xs-12">
               <input type="email" name="email_news" id="email_news" placeholder="Qual o seu email ?">
-              <label for="email">Email</label>
+              <!-- <label for="email">Email</label> -->
             </div>
-            <div class="btn-news mt-3 py-1">
-              <button class="btn mrl-0" type="submit">Cadastrar</button>
+            <div class="btn-news">
+              <button class="btn ml-2 mr-0 py-2" type="submit">Cadastrar</button>
             </div>
           </div>
         </form>
