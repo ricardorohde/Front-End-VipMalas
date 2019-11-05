@@ -174,14 +174,14 @@ require 'cms/classes/functions.php';
                                 <li data-target="#carouselMala" data-slide-to="2"></li>
                             </ol>
                             <div class="carousel-inner">
-                                <div class="carousel-item d-flex align-items-end active">
-                                    <img class="img-fluid" src="assets/images/mala4.png" alt="Mala grande de cor azul">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="assets/images/mala4.png" alt="Mala grande de cor azul">
                                 </div>
-                                <div class="carousel-item d-flex align-items-end active">
-                                    <img class="img-fluid" src="assets/images/mala4.png" alt="Mala grande de cor azul">
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="assets/images/mala2.png" alt="Mala grande de cor azul">
                                 </div>
-                                <div class="carousel-item d-flex align-items-end active">
-                                    <img class="img-fluid" src="assets/images/mala4.png" alt="Mala grande de cor azul">
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="assets/images/mala1.png" alt="Mala grande de cor azul">
                                 </div>
                             </div>
                         </div>

@@ -1,308 +1,128 @@
-<?/*
-
-session_start();
-include 'cms/config/config.php';
-require 'cms/classes/class.conndatabase.php';
-require 'cms/classes/functions.php';
-
-if (is_numeric($_GET['ref'])) {
-   $resServ = mysql_query("SELECT * FROM site_tb_servicos WHERE id_serv = '" . $_GET['ref'] . "' ");
-   if (mysql_num_rows($resServ)) {
-      $rowServ = mysql_fetch_array($resServ);
-
-      $resFotos = mysql_query("SELECT * FROM site_tb_servicos_fotos WHERE ref = '" . $rowServ['id_serv'] . "' ORDER BY id_foto DESC");
-
-      $resMaisServ = mysql_query("SELECT * FROM site_tb_servicos WHERE id_serv <> '" . $rowServ['id_serv'] . "'  ORDER BY titulo_serv ASC LIMIT 2 ");
-
-      $count_hit = $rowServ['hit_serv'];
-      $count_hit = $count_hit + 1;
-      mysql_query("UPDATE site_tb_servicos SET hit_serv='" . $count_hit . "' WHERE id_serv = '" . $rowServ['id_serv'] . "'");
-   } else {
-      Redir('/#cliente');
-   }
-} else {
-   Redir('/#cliente');
-}
-
-*/ ?>
-<?php
+<?
 session_start();
 include 'cms/config/config.php';
 require 'cms/classes/class.conndatabase.php';
 require 'cms/classes/functions.php';
 ?>
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="pt-br" itemscope itemtype="http://schema.org/WebPage">
+<!--<![endif]-->
 
-<html>
-<? include('includes/metas.php'); ?>
-<? include('includes/css.php'); ?>
+<head>
+    <? include('includes/metas.php'); ?>
+    <? include('includes/css.php'); ?>
 </head>
 
 <body>
-   <!-- ____________________ HEADER ____________________-->
-   <? include('includes/header2.php'); ?>
+    <?/*
+    ##### RESTRIÇÃO DE ACESSO #####
+    include('authCliente.php');
+    ###############################
+    */ ?>
+    <!-- ____________________ HEADER ____________________-->
+    <? include('includes/header2.php'); ?>
 
-   <main class="cliente">
-      <!-- ____________________ TITTLE ____________________-->
-      <? include('includes/title.php'); ?>
+    <main class="cliente">
 
-      <?
-      session_start();
-      include 'cms/config/config.php';
-      require 'cms/classes/class.conndatabase.php';
-      require 'cms/classes/functions.php';
+        <!-- ____________________ TITTLE ____________________-->
+        <? include('includes/title.php'); ?>
 
-      ?>
-      <!doctype html>
-      <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-      <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-      <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-      <!--[if gt IE 8]><!-->
-      <html class="no-js" lang="pt-br" itemscope itemtype="http://schema.org/WebPage">
-      <!--<![endif]-->
+        <? include('includes/whatsapp-window.php'); ?>
 
-      <head>
-         <? include('includes/metas.php'); ?>
-         <? include('includes/css.php'); ?>
-      </head>
-
-      <body>
-
-         <? include('includes/header.php'); ?>
-         <? include('includes/whatsapp-window.php'); ?>
-
-         <section class="top-page">
+        <section class="painel-page">
             <div class="container">
-               <div class="row">
-                  <div class="col-md-12 text-center">
-                     <h1>Novo cadastro</h1>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <section class="cadastro-page">
-            <div class="container">
-               <div class="row">
-                  <div class="col-md-12">
-                     <div class="breadcrumb-site">
-                        <p><a href="./">Home</a> / <b>Cadastro</b></p>
-                     </div>
-                     <form class="form-style form-panel" name="formCadastro" id="formCadastro" action="processa_dados.php?act=NovoCadastro" enctype="multipart/form-data" method="post" onsubmit="return validaFormCadastro();">
-                        <div class="row">
-                           <div class="col-md-4">
-                              <div class="form-group">
-                                 <span class="input input--chisato">
-                                    <input required="" class="input__field input__field--chisato" type="text" name="nome" id="nome">
-                                    <label class="input__label input__label--chisato">
-                                       <span class="input__label-content input__label-content--chisato" data-content="NOME:">NOME:</span>
-                                    </label>
-                                 </span>
-                              </div>
-                           </div>
-                           <div class="col-md-3">
-                              <div class="form-group">
-                                 <span class="input input--chisato">
-                                    <input required="" class="input__field input__field--chisato" type="text" name="email" id="email">
-                                    <label class="input__label input__label--chisato">
-                                       <span class="input__label-content input__label-content--chisato" data-content="EMAIL:">EMAIL:</span>
-                                    </label>
-                                 </span>
-                              </div>
-                           </div>
-                           <div class="col-md-2">
-                              <div class="form-group">
-                                 <span class="input input--chisato">
-                                    <input required="" class="input__field input__field--chisato mask_cpf" type="text" name="cpf" id="cpf">
-                                    <label class="input__label input__label--chisato">
-                                       <span class="input__label-content input__label-content--chisato" data-content="CPF:">CPF:</span>
-                                    </label>
-                                 </span>
-                              </div>
-                           </div>
-                           <div class="col-md-3">
-                              <div class="form-group">
-                                 <span class="input input--chisato">
-                                    <input required="" class="input__field input__field--chisato mask_date" type="text" name="datanascimento" id="datanascimento">
-                                    <label class="input__label input__label--chisato">
-                                       <span class="input__label-content input__label-content--chisato" data-content="DATA DE NASCIMENTO:">DATA DE NASCIMENTO:</span>
-                                    </label>
-                                 </span>
-                              </div>
-                           </div>
-                           <div class="col-md-3">
-                              <div class="form-group">
-                                 <span class="input input--chisato">
-                                    <input required="" class="input__field input__field--chisato mask_phone" type="text" name="telefone" id="telefone">
-                                    <label class="input__label input__label--chisato">
-                                       <span class="input__label-content input__label-content--chisato" data-content="TELEFONE:">TELEFONE:</span>
-                                    </label>
-                                 </span>
-                              </div>
-                           </div>
-                           <div class="col-md-3">
-                              <div class="form-group">
-                                 <span class="input input--chisato">
-                                    <input required="" class="input__field input__field--chisato mask_phone" type="text" name="celular" id="celular">
-                                    <label class="input__label input__label--chisato">
-                                       <span class="input__label-content input__label-content--chisato" data-content="CELULAR:">CELULAR:</span>
-                                    </label>
-                                 </span>
-                              </div>
-                           </div>
-                           <div class="col-md-3">
-                              <div class="form-group">
-                                 <span class="input input--chisato">
-                                    <input required="" class="input__field input__field--chisato" type="password" name="senha" id="senha">
-                                    <label class="input__label input__label--chisato">
-                                       <span class="input__label-content input__label-content--chisato" data-content="SENHA:">SENHA:</span>
-                                    </label>
-                                 </span>
-                              </div>
-                           </div>
-                           <div class="col-md-3">
-                              <div class="form-group">
-                                 <span class="input input--chisato">
-                                    <input required="" class="input__field input__field--chisato" type="password" name="confirmacaosenha" id="confirmacaosenha">
-                                    <label class="input__label input__label--chisato">
-                                       <span class="input__label-content input__label-content--chisato" data-content="REPITA A SENHA:">REPITA A SENHA:</span>
-                                    </label>
-                                 </span>
-                              </div>
-                           </div>
-                           <div class="col-md-4 button-align">
-                              <div class="button-area">
-                                 <button class="btn link-style hvr-wobble-horizontal">Finalizar cadastro</button>
-                              </div>
-                           </div>
+                <div class="row">
+
+                <!-- ____________________ MENU SELECT ____________________-->
+                    <div class="col-md-3">
+                        <? include('includes/menu-cliente.php'); ?>
+                    </div>
+
+                    <div class="col-md-9">
+                        <h2>Início</h2>
+                        <div class="row info-user">
+                            <div class="col-md-6">
+                                <p><b>Nome: </b> <?= $authRow['nome_cli'] ?></p>
+                                <p><b>CPF: </b><?= $authRow['cpf_cli'] ?></p>
+                                <p><b>Data de nascimento: </b> <?= mostraData($authRow['nascimento_cli']) ?></p>
+                            </div>
+                            <div class="col-md-6">
+                                <p><b>E-mail: </b> <?= $authRow['email_cli'] ?></p>
+                                <p><b>Telefone: </b><?= $authRow['tel_cli'] ?></p>
+                                <p><b>Celular: </b><?= $authRow['cel_cli'] ?></p>
+                            </div>
                         </div>
-                     </form>
-                  </div>
-               </div>
+                        <h3>Últimos pedidos</h3>
+                        <div class="row">
+                            <?
+                            $resPed = mysql_query("SELECT * FROM site_tb_pedidos WHERE ref_cli = '" . $sessionComprador_id . "' AND processado_ped = 's' ORDER BY id_ped DESC LIMIT 4");
+                            if (mysql_num_rows($resPed)) {
+                                while ($rowPed = mysql_fetch_array($resPed)) {
+                                    $InfoStatus = mysql_fetch_array(mysql_query("SELECT * FROM site_tb_pedidos_status WHERE id_status = '" . $rowPed['status_ped'] . "'"));
+                                    ?>
+                                    <div class="col-md-12">
+                                        <div class="box-pedido">
+                                            <div class="row">
+                                                <div class="col-md-10">
+                                                    <div class="row">
+                                                        <div class="col-md-3">
+                                                            <p>
+                                                                <b>Nº Pedido</b><br>
+                                                                <?= str_pad($rowPed['id_ped'], 7, "0", STR_PAD_LEFT) ?>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <p>
+                                                                <b>Data</b><br>
+                                                                <?= mostraData(substr($rowPed['data_ped'], 0, 10)) ?>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <p>
+                                                                <b>Envio</b><br>
+                                                                <?= $rowPed['tipoFrete_ped'] ?>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <p>
+                                                                <b>Status</b><br>
+                                                                <?= $InfoStatus['legenda_status'] ?>
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-12">
+                                                            <div class="link-area-painel">
+                                                                <a href="painel/pedido/<?= $rowPed['id_ped'] ?>" class="bg-blue-border hvr-wobble-vertical">Ver detalhes</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?  }
+                                } else { ?>
+                                <div class="col-md-12">
+                                    <div class="box-pedido">
+                                        <div class="row">
+                                            <p>Você ainda não efetuou uma compra, <a href="home">clique aqui</a> para realizar sua primeira compra.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            <? } ?>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </section>
+        </section>
 
-         <script type="text/javascript" language="javascript">
-            function validaFormCadastro() {
+        <? include('includes/footer.php'); ?>
+        <? include('includes/js.php'); ?>
+        <? include('includes/analytics.php'); ?>
 
-               d = document.formCadastro;
+</body>
 
-               //validar nome
-               if (d.nome.value == "") {
-                  alert("O campo NOME deve ser preenchido!");
-                  d.nome.focus();
-                  return false;
-               } else {
-                  var str = d.nome.value;
-                  var count = str.trim().split(/[\s\.,;]+/).length;
-                  if (count < 2) {
-                     alert("Preencha seu NOME COMPLETO!");
-                     d.nome.focus();
-                     return false;
-                  }
-               }
-
-               //validar email
-               if (d.email.value == "") {
-                  alert("O campo E-MAIL deve ser preenchido!");
-                  d.email.focus();
-                  return false;
-               } else {
-                  var email = d.email.value;
-                  var exclude = /[^@\-\.\w]|^[_@\.\-]|[\._\-]{2}|[@\.]{2}|(@)[^@]*\1/;
-                  var check = /@[\w\-]+\./;
-                  var checkend = /\.[a-zA-Z]{2,3}$/;
-                  if (((email.search(exclude) != -1) || (email.search(check)) == -1) || (email.search(checkend) == -1)) {
-                     alert("O campo E-MAIL deve ser um endereço válido!");
-                     d.email.focus();
-                     return false;
-                  }
-
-               }
-
-               //validar cpf
-               if (!validaCPF(d.cpf.value)) {
-                  alert('O campo CPF deve ser preenchido corretamente!');
-                  d.cpf.focus();
-                  return false;
-               }
-
-               //validar datanascimento
-               if (d.datanascimento.value.length < 10) {
-                  alert("O campo DATA DE NASCIMENTO deve ser preenchido corretamente!");
-                  d.datanascimento.focus();
-                  return false;
-               }
-
-               //validar telefone
-               if (d.telefone.value.length < 14) {
-                  alert("O campo TELEFONE deve ser preenchido corretamente!");
-                  d.telefone.focus();
-                  return false;
-               }
-
-               //validar celular
-               if (d.celular.value.length < 15) {
-                  alert("O campo CELULAR deve ser preenchido corretamente!");
-                  d.celular.focus();
-                  return false;
-               }
-
-               if (d.senha.value == "") {
-                  alert("O campo SENHA deve ser preenchido!");
-                  d.senha.focus();
-                  return false;
-               }
-
-               //validar mensagem
-               if (d.confirmacaosenha.value != d.senha.value) {
-                  alert("Senhas digitadas não conferem!");
-                  d.senha.focus();
-                  return false;
-               }
-
-            }
-
-            function validaCPF(cpf) {
-               cpf = cpf.replace(/[^\d]+/g, '');
-               if (cpf == '') return false;
-               // Elimina CPFs invalidos conhecidos  
-               if (cpf.length != 11 ||
-                  cpf == "00000000000" ||
-                  cpf == "11111111111" ||
-                  cpf == "22222222222" ||
-                  cpf == "33333333333" ||
-                  cpf == "44444444444" ||
-                  cpf == "55555555555" ||
-                  cpf == "66666666666" ||
-                  cpf == "77777777777" ||
-                  cpf == "88888888888" ||
-                  cpf == "99999999999")
-                  return false;
-               // Valida 1o digito 
-               add = 0;
-               for (i = 0; i < 9; i++)
-                  add += parseInt(cpf.charAt(i)) * (10 - i);
-               rev = 11 - (add % 11);
-               if (rev == 10 || rev == 11)
-                  rev = 0;
-               if (rev != parseInt(cpf.charAt(9)))
-                  return false;
-               // Valida 2o digito 
-               add = 0;
-               for (i = 0; i < 10; i++)
-                  add += parseInt(cpf.charAt(i)) * (11 - i);
-               rev = 11 - (add % 11);
-               if (rev == 10 || rev == 11)
-                  rev = 0;
-               if (rev != parseInt(cpf.charAt(10)))
-                  return false;
-               return true;
-            }
-         </script>
-
-         <? include('includes/footer.php'); ?>
-         <? include('includes/js.php'); ?>
-         <? include('includes/analytics.php'); ?>
-
-      </body>
-
-      </html>
+</html>

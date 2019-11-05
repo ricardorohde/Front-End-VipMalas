@@ -58,7 +58,7 @@ require 'cms/classes/functions.php';
                                     <div class="form-group col-md-4">
                                         <!-- 
 									<input required type="text" name="cidade" id="cidade" class="form-control"> -->
-
+                                    <label>UF</label>
                                         <select required="" class="form-control" name="estado" id="estado">
                                             <option value="" disabled="" selected=""><label>UF</label></option>
                                             <option value="AC">AC</option>

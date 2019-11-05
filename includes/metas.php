@@ -85,6 +85,14 @@ switch ($cur_page) {
 		$Header_Title = 'Login';
 		//$Header_Description = '';
 		break;
+	case 'cadastro.php':
+		$Header_Title = 'Novo Cadastro';
+		//$Header_Description = '';
+		break;
+	case 'cadastro.php':
+		$Header_Title = 'Novo Cadastro';
+		//$Header_Description = '';
+		break;
 	case 'cliente.php':
 		$Header_Title = 'clientes';
 		//$Header_Description = '';
